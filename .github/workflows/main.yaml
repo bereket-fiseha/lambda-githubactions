@@ -24,4 +24,4 @@ jobs:
         - name: deploy
           run: |
             zip -j out.zip lambda_function.py 
-            aws lambda update-function-code --function-name=lambda_handler --zip-file=fileb://out.zip
+            aws lambda update-function-code --function-name=lamdafunction --zip-file=fileb://out.zip
