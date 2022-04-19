@@ -23,5 +23,6 @@ jobs:
             aws-region: us-east-1
         - name: deploy
           run: |
+            aws --version
             zip -j out.zip lambda_function.py 
             aws lambda update-function-code --function-name=lamdafunction --zip-file=fileb://out.zip
