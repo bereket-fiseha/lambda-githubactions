@@ -24,5 +24,6 @@ jobs:
         - name: deploy
           run: |
             aws --version
+            docker --version
             zip -j out.zip lambda_function.py 
             # aws lambda update-function-code --function-name=lamdafunction --zip-file=fileb://out.zip
