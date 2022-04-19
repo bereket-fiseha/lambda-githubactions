@@ -15,14 +15,14 @@ jobs:
           with:
              python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
              architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-        - name: Configure Aws Credentials
-          uses: aws-actions/configure-aws-credentials@v1
-          with: 
-            aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-            aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-            aws-region: us-east-1
-        - name: deploy
+        # - name: Configure Aws Credentials
+        #   uses: aws-actions/configure-aws-credentials@v1
+        #   with: 
+        #     aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        #     aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        #     aws-region: us-east-1
+        # - name: deploy
           run: |
             aws --version
             zip -j out.zip lambda_function.py 
-            aws lambda update-function-code --function-name=lamdafunction --zip-file=fileb://out.zip
+            # aws lambda update-function-code --function-name=lamdafunction --zip-file=fileb://out.zip
